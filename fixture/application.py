@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from fixture.session import SessionHelper
+from fixture.soap_helper import SoapHelper
 
 
 class Application:
@@ -10,6 +11,7 @@ class Application:
         self.driver.implicitly_wait(1) # waiting in seconds
         self.base_url = "http://localhost/mantisbt-2.24.3/"
         self.session = SessionHelper(self)
+        self.soap = SoapHelper(self)
 
     def is_valid(self):
         try:
